@@ -1,0 +1,35 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Rivaaz - Event Planning{% endblock %}</title>
+
+    <!-- Link to CSS (assuming CSS is in static/events/css/styles.css) -->
+    <link rel="stylesheet" href="{% static 'events/css/styles.css' %}">
+</head>
+    <body> 
+        <img src="{% static 'images/elegant_background.png' %}" style="width: 100%; height: auto;">
+
+    <header>
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'signup' %}">Signup</a>
+            <a href="{% url 'login' %}">Login</a>
+        </nav>
+    </header>
+
+    <!-- Main content area -->
+    <div class="content">
+        {% block content %}  <!-- This block will be replaced in child templates -->
+        {% endblock %}
+    </div>
+
+    <footer>
+        <p>© 2024 Rivaaz. All rights reserved.</p>
+    </footer>
+</body>
+</html>

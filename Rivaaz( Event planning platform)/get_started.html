@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - Rivaaz</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        /* Body Styling with Bright Gradient */
+        body {
+            background: linear-gradient(120deg, #00c6ff, #0072ff); /* Teal to Blue Gradient */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 700px;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2.5em;
+            color: #0072ff; /* Vibrant Blue */
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph Styling */
+        p {
+            color: #333333;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Chatbot Container Styling */
+        #chatbot-container {
+            background-color: #f3faff; /* Light Teal Background */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin-top: 30px;
+        }
+
+        /* Chat Window Styling */
+        #chat-window {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* User Input and Send Button Styling */
+        #user-input {
+            width: calc(100% - 90px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            margin-right: 5px;
+        }
+
+        #send-btn {
+            padding: 10px 15px;
+            background-color: #0072ff; /* Matching Blue */
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #send-btn:hover {
+            background-color: #005bb5; /* Darker Blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Rivaaz</h1>
+        <p>Our AI-powered platform, Rivaaz, provides personalized event planning for weddings, funerals, anniversaries, and birthdays. Rivaaz offers customized vendor recommendations, guest management, and budgeting tools based on user preferences. The integrated AI chatbot assists users with inquiries, making the planning process seamless and efficient. Experience hassle-free planning with Rivaaz, crafted to make your special events memorable and stress-free!</p>
+    
+        <!-- Chatbot Section -->
+        <div id="chatbot-container">
+            <h2>AI Chatbot</h2>
+            <div id="chat-window">
+                <!-- Chatbot content will appear here -->
+            </div>
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+    <script src="{% static 'js/chatbot.js' %}"></script>
+</body>
+</html>

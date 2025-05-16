@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Recommendations</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* Body Styling */
+        body {
+            background-color: #f4f4f4; /* Light grey background */
+            color: #333; /* Dark text color for readability */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean font */
+            margin: 0; /* Remove default body margin */
+            padding: 0; /* Remove default body padding */
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 900px; /* Maximum width of the container */
+            margin: auto; /* Center the container */
+            padding: 30px; /* Padding inside the container */
+            background: #fff; /* White background for the form */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            margin-top: 50px; /* Space from the top */
+        }
+
+        /* Heading Styling */
+        h1 {
+            text-align: center; /* Center the heading */
+            margin-bottom: 30px; /* More space below the heading */
+            color: #4A90E2; /* Bright blue color */
+            font-size: 2.5em; /* Increased font size */
+        }
+
+        /* Vendor List Styling */
+        .vendor-list {
+            margin-top: 20px; /* Space above vendor list */
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%; /* Full width for table */
+            border-collapse: collapse; /* Merge borders */
+            margin-top: 20px; /* Space above table */
+        }
+
+        th, td {
+            padding: 15px; /* Increased padding for cells */
+            text-align: left; /* Align text to the left */
+            border-bottom: 1px solid #ccc; /* Border below table rows */
+        }
+
+        th {
+            background-color: #007bff; /* Blue background for header */
+            color: #fff; /* White text for header */
+            font-size: 1.1em; /* Slightly larger font size */
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; /* Light grey on hover */
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block; /* Inline block for button styling */
+            padding: 12px 20px; /* Padding for button */
+            margin-top: 30px; /* Space above the button */
+            background-color: #28a745; /* Green background */
+            color: #fff; /* White text */
+            border: none; /* Remove border */
+            border-radius: 6px; /* Rounded corners */
+            text-decoration: none; /* Remove underline */
+            text-align: center; /* Center text */
+            font-size: 1em; /* Button font size */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for button */
+        }
+
+        .btn:hover {
+            background-color: #218838; /* Darken on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px; /* Adjust padding for smaller screens */
+            }
+
+            h1 {
+                font-size: 2em; /* Adjust heading size */
+            }
+
+            th, td {
+                padding: 10px; /* Adjust padding for table cells */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personalized Vendor Recommendations</h1>
+
+        <div class="vendor-list">
+            {% if vendors %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vendor Name</th>
+                            <th>Event Type</th>
+                            <th>Culture Specialization</th>
+                            <th>Budget</th>
+                            <th>Contact Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vendor in vendors %}
+                        <tr>
+                            <td>{{ vendor.name }}</td>
+                            <td>{{ vendor.event_type }}</td>
+                            <td>{{ vendor.culture_specialization }}</td>
+                            <td>${{ vendor.budget_range }}</td>
+                            <td>{{ vendor.contact_number }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No vendor recommendations available based on your input.</p>
+            {% endif %}
+        </div>
+
+        <a href="{% url 'home' %}" class="btn">Go Back</a>
+    </div>
+</body>
+</html>

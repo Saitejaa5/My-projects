@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Rivaaz</title>
+    <style> 
+        /* Body Styling with Bright Background */
+        body {
+            background-color: #f0f8ff; /* Light Aqua Background */
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 750px;
+            background: #ffffff; /* White background for clean look */
+            padding: 50px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2.8em;
+            color: #ff6f61; /* Coral Red */
+            border-bottom: 3px solid #ff6f61;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            color: #666666;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        /* Paragraph Styling */
+        p {
+            line-height: 1.7;
+            color: #555555;
+            margin: 18px 0;
+            font-size: 1.1em;
+        }
+
+        /* Button Styling */
+        a {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 10px;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Button Colors */
+        .btn-primary { background-color: #ff6f61; } /* Coral Red */
+        .btn-primary:hover { background-color: #e65a4f; }
+
+        .btn-secondary { background-color: #4caf50; } /* Soft Green */
+        .btn-secondary:hover { background-color: #419846; }
+
+        .btn-info { background-color: #2196f3; } /* Blue */
+        .btn-info:hover { background-color: #1976d2; }
+
+        .btn-about { background-color: #ffb74d; } /* Light Orange */
+        .btn-about:hover { background-color: #e6a143; }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 30px;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: #777777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Rivaaz</h1>
+        <h2>Your Personalized Event Planning Platform</h2>
+        <p>Planning your special events made easy!</p>
+        <p>Whether it's a wedding, funeral, anniversary, or birthday, we're here to help you every step of the way.</p>
+        
+        <!-- Colorful Buttons for Interactivity -->
+        <a href="{% url 'get_started' %}" class="btn btn-primary">Get Started</a>
+        <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+        <a href="{% url 'signup' %}" class="btn btn-info">Signup</a>
+        <a href="{% url 'about' %}" class="btn btn-about">About</a>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Rivaaz. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
